@@ -1,9 +1,21 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Featured from "./home/Featured.astro";
+import SelectedWork from "./home/SelectedWork.astro";
+import AboutMe from "./home/AboutMe.astro";
+import Hero from "./home/Hero.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-	<main class="bg-red-500">
-		hola
-	</main>
+  <main class="border border-secondary p-2.5 text-xl max-w-7xl mx-auto">
+    <div class="border border-secondary p-4">
+      <Hero />
+
+      <div class="flex flex-col lg:flex-row">
+        <Featured />
+        <SelectedWork />
+        <AboutMe />
+      </div>
+    </div>
+  </main>
 </Layout>

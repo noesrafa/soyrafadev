@@ -11,6 +11,8 @@ const { title } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
@@ -19,45 +21,70 @@ const { title } = Astro.props;
     <title>{title}</title>
     <link
       rel="preload"
-      href="/fonts/open-sans-300.woff2"
+      href="/fonts/jetbrains-100.woff2"
       as="font"
       type="font/woff2"
       crossorigin
     />
-	<link
-	  rel="preload"
-	  href="/fonts/open-sans-400.woff2"
-	  as="font"
-	  type="font/woff2"
-	  crossorigin
-	/>
-	<link
-	  rel="preload"
-	  href="/fonts/open-sans-600.woff2"
-	  as="font"
-	  type="font/woff2"
-	  crossorigin
-	/>
-	<link
-	  rel="preload"
-	  href="/fonts/open-sans-700.woff2"
-	  as="font"
-	  type="font/woff2"
-	  crossorigin
-	/>
-	<link
-	  rel="preload"
-	  href="/fonts/open-sans-800.woff2"
-	  as="font"
-	  type="font/woff2"
-	  crossorigin
-	/>
+    <link
+      rel="preload"
+      href="/fonts/jetbrains-200.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/jetbrains-300.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/jetbrains-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/jetbrains-600.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/jetbrains-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/jetbrains-800.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
   </head>
-  <body class="font-opensans text-4xl">
+  <body class="font-jetbrains h-full">
     <slot />
   </body>
 </html>
+
 <style is:global>
+  :root {
+    --primary: #020c18;
+    --secondary: #bff8fe;
+  }
+  html {
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 12px;
+    height: 100%;
+  }
   code {
     font-family:
       Menlo,
@@ -68,5 +95,10 @@ const { title } = Astro.props;
       Bitstream Vera Sans Mono,
       Courier New,
       monospace;
+  }
+  #defaultCanvas0 {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
   }
 </style>
