@@ -10,7 +10,7 @@ const { href, label, type } = Astro.props;
 
 <a
   href={href}
-  class="hover:bg-secondary hover:text-primary flex items-center justify-between px-2 py-0.5"
+  class="hover:bg-secondary hover:text-primary flex items-center justify-between px-2 py-2 lg:py-0.5"
 >
   <span class={`truncate ${type && "lg:w-1/2"}`}>{label}</span>
   {type && <span class="lg:w-1/2 ">{type}</span>}
