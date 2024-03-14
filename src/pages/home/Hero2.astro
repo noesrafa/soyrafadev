@@ -1,0 +1,55 @@
+<div
+  id="canvas-holder"
+  class="w-[calc(100dvw-90)] h-[120px] lg:h-[380px] overflow-hidden flex justify-center mb-4"
+>
+</div>
+
+<style>
+  canvas {
+    display: block;
+  }
+</style>
+
+<script is:inline>
+    let spaceX = 20,
+      spaceY = 20,
+      side = 10;
+    let prevMouseX, prevMouseY;
+  
+    function setup() {
+      let canvas = createCanvas(2000, 1000);
+      canvas.parent("canvas-holder");
+      noStroke();
+      prevMouseX = mouseX;
+      prevMouseY = mouseY;
+    }
+  
+    function draw() {
+      background("#020c18");
+  
+      let smoothMouseX = lerp(prevMouseX, mouseX, 0.1);
+      let smoothMouseY = lerp(prevMouseY, mouseY, 0.1);
+  
+      // Horizontal
+      for (let x = 20; x < width; x += spaceX) {
+        // Vertical
+        for (let y = 20; y < height; y += spaceY) {
+          let d = dist(x, y, smoothMouseX, smoothMouseY);
+          if (d < 200) {
+            fill("#bff8fe");
+            side = map(d, 10, 90, 20, 5);
+          } else {
+            fill("#bff8fe");
+            side = 1;
+          }
+  
+          rect(x - side / 2, y - side / 2, side, side);
+        }
+      }
+  
+      prevMouseX = smoothMouseX;
+      prevMouseY = smoothMouseY;
+    }
+  </script>
+  
+  
