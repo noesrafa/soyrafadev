@@ -1,9 +1,14 @@
+---
+import Link from "../../components/Link.astro"
+---
 <div class="lg:w-[25%] pb-10">
   <div class="py-2 border-y border-secondary">
     <h2 class="lg:border-r border-secondary">Featured:</h2>
   </div>
-  <div class="pt-10 lg:border-r border-secondary mt-2">
-    <h3>BLOG 2</h3>
-    > How to make a website with Astro
+  <div class="pt-8 lg:border-r border-secondary mt-2 pr-4">
+    <h3 class="mb-3">BLOG 2</h3>
+    <Link href="#" label="> How to write a blog in astro" />
+    <Link href="#" label="> LLM in 3 steps" />
+    <Link href="#" label="> Tetris Javascript" />
   </div>
 </div>
